@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomConstraint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvValue"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_5"
+                    android:textSize="@dimen/textsize_14"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="@string/lbl_name"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/tvName"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvChange"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_5"
+                    android:textSize="@dimen/textsize_14"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="@string/lbl_value"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvChange"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/tvValue"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/margin_5"
+                    android:text="@string/lbl_change"
+                    android:textSize="@dimen/textsize_14"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCompanydata"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topHeading"
+                tools:itemCount="10"
+                android:layout_marginTop="@dimen/margin_5"
+                tools:listitem="@layout/adapter_company_data" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topConstraint">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintViewOne"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/constraintViewTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewOneHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_5"
+                        android:text="@string/lbl_view_1"
+                        android:textSize="@dimen/textsize_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewOneValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvViewOne"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvViewOneChange"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_5"
+                        android:textSize="@dimen/textsize_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="@string/lbl_name"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewOneChange"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@+id/tvViewOneValue"
+                        app:layout_constraintTop_toTopOf="@+id/tvViewOneValue"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvViewOneValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_5"
+                        android:text="@string/lbl_value"
+                        android:textSize="@dimen/textsize_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvViewOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewOneHeading"
+                    tools:itemCount="10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    tools:listitem="@layout/adapter_view_one" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintViewTwo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/constraintViewOne"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewTwoHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_5"
+                        android:text="@string/lbl_view_2"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewTwoValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvViewTwo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvViewTwoChange"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_5"
+                        android:textSize="@dimen/textsize_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="@string/lbl_name"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewTwoChange"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@+id/tvViewTwoValue"
+                        app:layout_constraintTop_toTopOf="@+id/tvViewTwoValue"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvViewTwoValue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_5"
+                        android:textSize="@dimen/textsize_14"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="@string/lbl_value"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvViewTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/margin_5"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewTwoHeading"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/adapter_view_one" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+    </data>
+</layout>

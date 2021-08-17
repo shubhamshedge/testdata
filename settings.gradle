@@ -1,0 +1,2 @@
+rootProject.name = "IIFLProjectTask"
+include ':app'

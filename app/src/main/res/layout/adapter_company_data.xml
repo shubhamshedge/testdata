@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+<variable name="project" type="com.example.iiflprojecttask.models.DataList"/>
+</data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_5">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvValue"
+        tools:text="Name"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/margin_5"
+        android:text="@{project.fullName}"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvChange"
+        tools:text="Name"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/margin_5"
+        android:text="@{project.high52Week.toString()}"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvChange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvValue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Name"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/margin_5"
+        android:text="@{project.dayHigh.toString()}"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

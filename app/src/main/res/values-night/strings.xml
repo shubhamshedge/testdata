@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lbl_password">Password</string>
+    <string name="lbl_email">Email</string>
+    <string name="login">Login</string>
+    <string name="lbl_name">Name</string>
+    <string name="lbl_value">Value</string>
+    <string name="lbl_change">Change</string>
+    <string name="lbl_view_1">View 1</string>
+    <string name="lbl_view_2">View 2</string>
+</resources>
