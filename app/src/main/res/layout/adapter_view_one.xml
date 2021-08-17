@@ -23,6 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Name"
+            android:layout_marginBottom="@dimen/margin_5"
             android:text="@{project.fullName}"/>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -37,7 +38,16 @@
             app:layout_constraintStart_toEndOf="@+id/tvName"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Name"
+            android:layout_marginBottom="@dimen/margin_5"
             android:text="@{project.perChange.toString()}"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_5"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

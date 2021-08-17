@@ -1,5 +1,6 @@
 package com.example.iiflprojecttask.models
-
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -46,7 +47,11 @@ class Body {
     var status: Int? = null
 }
 
+@Entity(tableName = "script_data")
 class DataList {
+    @PrimaryKey(autoGenerate = true)
+    var id : Int = 0
+
     @SerializedName("DayHigh")
     @Expose
     var dayHigh: Double? = null

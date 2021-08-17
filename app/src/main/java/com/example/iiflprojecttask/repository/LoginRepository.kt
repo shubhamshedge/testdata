@@ -49,7 +49,7 @@ class LoginRepository(var requireContext: Context) {
     }
 
     fun getLoginDetails(context: Context, username: String) : LiveData<LoginTableModel>? {
-        loginTableModel = loginDatabase!!.loginDao().getLoginDetails(username)
+//        loginTableModel = loginDatabase!!.loginDao().getLoginDetails(username)
         return loginTableModel
     }
 

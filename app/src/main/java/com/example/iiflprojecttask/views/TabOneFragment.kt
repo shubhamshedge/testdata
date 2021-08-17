@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.iiflprojecttask.MainActivity
 import com.example.iiflprojecttask.R
 import com.example.iiflprojecttask.adapter.ProjectAdapter
 import com.example.iiflprojecttask.adapter.ScriptAdapter
@@ -35,6 +36,7 @@ class TabOneFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         _binding = TabOneFragmentBinding.inflate(inflater, container, false)
+        (activity as MainActivity).setToolbarTitle("IIFL")
         return binding.root
     }
 
@@ -63,9 +65,12 @@ class TabOneFragment : Fragment(){
         header["Content-Type"] = "application/json"
         header["UserId"] = "YaP29KW2g56"
         header["Password"] = "H63prL2Nm8"
+
+
         viewModel.callScriptDataAPI(scriptRequest,header)!!.observe(viewLifecycleOwner, Observer { serviceSetterGetter ->
             Log.d("IIFL", "onViewCreated: " + serviceSetterGetter.body!!.marketWatchName)
             scriptAdapter!!.setProjectList(serviceSetterGetter.body!!.data!!)
+            viewModel.insertAllScript(serviceSetterGetter.body!!.data!!)
 
         })
 
@@ -81,6 +86,14 @@ class TabOneFragment : Fragment(){
             Log.d("IIFL", "onViewCreated: " + gainer.looser)
             projectAdapter2!!.setProjectList(gainer.looser!!)
 
+        })
+
+        viewModel.getAllPosts().observe(viewLifecycleOwner,object:Observer<List<DataList>>{
+            override fun onChanged(data: List<DataList>?) {
+                for (item in data!!){
+                    Log.d("IIFL", "onChanged: " + item.dayHigh.toString())
+                }
+            }
         })
 
     }
